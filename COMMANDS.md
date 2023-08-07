@@ -8,6 +8,9 @@ Most are defined in the `parseInput` function.
 Commands are grouped into "Common", "9x50 only", or "6050 only".
 
 ## Common
+
+Commands that are common to all the EDTrackers. 
+
 ### H - Hello
 Request a 'hello' ping response.
 
@@ -27,16 +30,13 @@ _Note: the 6050's parseInput contains two hello conditions in the if statement!_
 Dump all the info.
 
 ### P - Randomize orientation (?)
-- _9150_
-- _9250_
 
 Does something with the device orientation! I think randomizes it?
 
 ### R Recalibrate Offsets
-_9150_
-_9250_
 
     recenter();
+
 ### S - Silent
 
 Sets the device to be silent.
@@ -44,18 +44,19 @@ Sets the device to be silent.
 Allows device to be used as a game controller (sends joystick values only).
 
 ### t - toggle linear/expoinential mode
-_9150_
-_9250_
+
+Does what it says on the tin.
 
 ### V - Verbose
-_9150_
-_9250_
 
 Sets the device to be verbose.
 
-The `outputUI` boolean is set internally, which sets up comms with the EDTracker GUI.
+The `outputUI` boolean is set internally.
+This sets up comms to send additional info to the EDTracker GUI.
 
 ## 6050 only
+
+Commands that only work on the 6050 series EDTrackers. 
 
 ### c - yawscale +0.25
 
@@ -108,7 +109,6 @@ Autocenter the device, and respond with `#` command and a value.
 
     "#", value, "\n"
 
-
 ### ^ - Toggle centering
 
 Toggle centering - returns with the flag value:
@@ -121,9 +121,9 @@ Toggle the debug setting.
 
 ## 9x50 only
 
+Commands that are only used by the 9x50 EDTrackers.
+
 ### r - full 20s recalibration
-_9150_
-_9250_
 
     fullCalib();
 
