@@ -10,12 +10,15 @@ Commands are grouped into "Common", "9x50 only", or "6050 only".
 ## Common
 ### H - Hello
 Request a 'hello' ping response.
+
 #### 9x50 variant
 
 If in startup, expect response 'startup hello' (`h`); if not, expect regular 'hello' (`H`).
 
-#### 6050 variant
+#### 6050 variant
+
 Expect a `H` hello response only (no 'startup hello' `h`).
+
 _Note: the 6050's parseInput contains two hello conditions in the if statement!_
 
 
@@ -29,7 +32,6 @@ Dump all the info.
 
 Does something with the device orientation! I think randomizes it?
 
-
 ### R Recalibrate Offsets
 _9150_
 _9250_
@@ -38,9 +40,8 @@ _9250_
 ### S - Silent
 
 Sets the device to be silent.
+
 Allows device to be used as a game controller (sends joystick values only).
-
-
 
 ### t - toggle linear/expoinential mode
 _9150_
@@ -51,6 +52,7 @@ _9150_
 _9250_
 
 Sets the device to be verbose.
+
 The `outputUI` boolean is set internally, which sets up comms with the EDTracker GUI.
 
 ## 6050 only
@@ -102,7 +104,7 @@ Calculates and saves the drift offset, then responds with the value in an `R` re
 
 ### '#' - Autocenter
 
-Autocenter the device, and response with `#` command and a value.
+Autocenter the device, and respond with `#` command and a value.
 
     "#", value, "\n"
 
