@@ -2,6 +2,16 @@
 
 List of things I've done during this development.
 
+## 2023-08-10
+
+1. Started creating the component layout. It's far from pretty, but that's a problem for later.
+1. I don't like 'main' process stuff going into public - is there a better way? Created folder `main/src` as an alternative, but I don't know if it'll work!
+
+
+## 2023-08-08
+
+1. I've been talking to Dan (@brumster) about serial comms with the plugin. Making progress, looks promising.
+
 ## Done on 2023-08-05
 1. Followed the [Electron Quick Start guide](https://www.electronjs.org/docs/latest/tutorial/quick-start).
 1. Reorganised a bit to enable React, as per [this article by Daniel Katungi](https://www.section.io/engineering-education/desktop-application-with-react/). Not completely, but moved things to public and build folders.

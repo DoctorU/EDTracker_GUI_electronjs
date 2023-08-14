@@ -1,3 +1,10 @@
+const { contextBridge, ipcRenderer } = require('electron');
+const channels = require('./ipcChannels');
+
+contextBridge.exposeInMainWorld('electronAPI', {
+    requestDevices: () => ipcRenderer.invoke(channels.DEVICES)
+})
+
 window.addEventListener('DOMContentLoaded', () => {
     const replaceText = (selector, text) => {
         const element = document.getElementById(selector)
