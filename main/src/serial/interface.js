@@ -20,9 +20,7 @@ function values(number) {
 }
 let __exports = {};
 //set default values for all things:
-console.log('responses', responses);
 for (const response of Object.keys(responses)) {
-  console.log(response, '=', responses[response]);
   __exports[responses[response]] = createResponseString(responses[response]);
 }
 
@@ -39,5 +37,5 @@ __exports[responses.DRIFT] = createResponseString(responses.DRIFT, values(1));
 __exports[responses.TEMPERATURE] = createResponseString(responses.TEMPERATURE, values(1));
 __exports[responses.ORIENTATION] = createResponseString(responses.ORIENTATION, values(1));
 __exports[responses.BIAS_VALUES] = createResponseString(responses.BIAS_VALUES, values(6));
-console.log('exports defined', __exports);
+
 module.exports = __exports;
