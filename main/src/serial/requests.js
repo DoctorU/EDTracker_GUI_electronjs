@@ -1,0 +1,54 @@
+const VERBOSE = 'V'
+const HELLO = 'H'
+const INFO = 'I'
+const SSHHH = 'S'
+const CALC_BIAS_VALUES = 'B'
+const TOGGLE = 't'
+const TOGGLE_POLLING = 'p'
+const ZERO = '0'
+const GYRO_X_INC = 'M'
+const GYRO_X_DEC = 'm'
+const GYRO_Y_INC = 'N'
+const GYRO_Y_DEC = 'n'
+const GYRO_Z_INC = 'O'
+const GYRO_Z_DEC = 'o'
+const ACCEL_YAW_DEC_025 = 'c'
+const ACCEL_YAW_DEC_100 = 'C'
+const ACCEL_YAW_INC_025 = 'd'
+const ACCEL_YAW_INC_100 = 'G'
+const ACCEL_PITCH_DEC_025 = 'e'
+const ACCEL_PITCH_DEC_100 = 'E'
+const ACCEL_PITCH_INC_025 = 'f'
+const ACCEL_PITCH_INC_100 = 'F'
+const RECENTRE = 'R'
+const TOGGLE_AUTOCENTRE = '#' // 6050 only
+const DRIFT_COMPENSATION_SAVE = 'D'
+const ORIENTATION = 'P'
+module.exports = {
+  VERBOSE, 
+  HELLO, 
+  INFO,
+  SSHHH,
+  CALC_BIAS_VALUES,
+  TOGGLE,
+  TOGGLE_POLLING,
+  ZERO,
+  GYRO_X_INC,
+  GYRO_X_DEC,
+  GYRO_Y_INC,
+  GYRO_Y_DEC,
+  GYRO_Z_INC,
+  GYRO_Z_DEC,
+  ACCEL_YAW_INC_025,
+  ACCEL_YAW_INC_100,
+  ACCEL_YAW_DEC_025,
+  ACCEL_YAW_DEC_100,
+  ACCEL_PITCH_INC_025,
+  ACCEL_PITCH_INC_100,
+  ACCEL_PITCH_DEC_025,
+  ACCEL_PITCH_DEC_100,
+  RECENTRE,
+  TOGGLE_AUTOCENTRE,
+  DRIFT_COMPENSATION_SAVE,
+  ORIENTATION
+}
