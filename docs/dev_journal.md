@@ -2,6 +2,12 @@
 
 List of things I've done during this development.
 
+## 2023-08-15
+
+1. I think I've defined the serial interface (see `main/src/serial/*`). I'm now currently unit testing it.
+1. Also adding a `util` folder containing shell scripts to interact directly with devices. 
+This will help to obtain test data direct from the device, rather than hypothesizing it!
+
 ## 2023-08-10
 
 1. Started creating the component layout. It's far from pretty, but that's a problem for later.
