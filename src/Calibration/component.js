@@ -1,26 +1,27 @@
+import { Button, Form } from "react-bootstrap";
 
 function Calibration() {
   return (
-    <form id='calibration'>
-      <fieldset id='xfields'>
-        <label htmlFor='xfields'>X</label>
-        <button className='increase'>+</button>
-        <button className='decrease'>-</button>
-        <input type='text' className='value' value='Current Value' readOnly/>
-      </fieldset>
-      <fieldset id='yfields'>
-        <label htmlFor='yfields'>Y</label>
-        <button className='increase'>+</button>
-        <button className='decrease'>-</button>
-        <input type='text' className='value' value='Current Value' readOnly/>
-      </fieldset>
-      <fieldset id='zfields'>
-        <label htmlFor='zfields'>Z</label>
-        <button className='increase'>+</button>
-        <button className='decrease'>-</button>
-        <input type='text' className='value' value='Current Value' readOnly/>
-      </fieldset>
-    </form>
+    <Form className='calibration'>
+      <Form.Group className='xfields'>
+        <Form.Label htmlFor='xfields'>X</Form.Label>
+        <Button className='increase'>+</Button>
+        <Button className='decrease'>-</Button>
+        <Form.Control type='text' className='value' value='Current Value' readOnly plaintext/>
+      </Form.Group>
+      <Form.Group className='yfields'>
+        <Form.Label htmlFor='yfields'>Y</Form.Label>
+        <Button className='increase'>+</Button>
+        <Button className='decrease'>-</Button>
+        <Form.Control type='text' className='value' value='Current Value' readOnly plaintext/>
+      </Form.Group>
+      <Form.Group className='zfields'>
+        <Form.Label htmlFor='zfields'>Z</Form.Label>
+        <Button className='increase'>+</Button>
+        <Button className='decrease'>-</Button>
+        <Form.Control type='text' className='value' value='Current Value' readOnly plaintext/>
+      </Form.Group>
+    </Form>
   )
 }
 

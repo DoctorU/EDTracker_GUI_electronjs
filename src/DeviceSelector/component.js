@@ -1,27 +1,42 @@
+import { Accordion, Spinner } from "react-bootstrap";
+import DeviceList from "../DeviceList/component";
+
+function filterManufacturer(manufacturer) {
+  return function(dev) {
+    return dev.manufacturer === manufacturer;
+  };
+}
+function DeviceSelector({ devices, handleSelect }) {
 
 
-function DeviceSelector({devices}) {
-
-  function handleSelection(evt, arg) {
-    console.log('selected', evt, arg);
-  }
-  // devices = await window.edtrackerAPI.requestDevices();
-  let options = undefined;
-  console.log(JSON.stringify(devices,undefined, 2));
-  if (devices) {
-    options = devices.map((device)=> <option key={device.name}>{device.name} {device.manufacturer} ({device.path})</option>);
-  }
-  if(devices === undefined) {
-    return (<div >Waiting for devices...</div>);
-  }
-  else {
+  const manufacturers = devices.map((device) => device.manufacturer || 'Undefined')
+    .filter((el, idx, arr) => arr.indexOf(el) === idx);
+  if (devices && devices.length > 0) {
     return (
-      <select onSelect={(e) => handleSelection(e)}>
-        <option value=''> Select a device...</option>
-        {options}
-      </select>
-    );
+      <Accordion defaultActiveKey={0}>
+        {manufacturers.map((manufacturer, idx) =>
+          <Accordion.Item eventKey={idx} >
+            <Accordion.Header>{manufacturer}</Accordion.Header>
+            <Accordion.Body>
+              <DeviceList devices={devices} filter={filterManufacturer(manufacturer)} handleSelect={handleSelect}></DeviceList>
+            </Accordion.Body>
+          </Accordion.Item>
+        )}
+      </Accordion>
+
+    )
+  } else {
+    return (
+      <>
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+        <span>Loading Devices...</span>
+      </>
+    )
+
   }
 }
+
 
 export default DeviceSelector;

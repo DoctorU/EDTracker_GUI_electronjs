@@ -1,20 +1,31 @@
 import DeviceManager from '../DeviceManager/component'
 import Calibration from '../Calibration/component'
 import ThreeDRender from '../ThreeDRender/component'
+import { Col, Container, Row, Stack } from 'react-bootstrap';
 
 function GuiLayout() {
   return (
-    <div id='gui-layout'>
-      <div id='left-column'>
-        <DeviceManager>
-        </DeviceManager>
+    <Container id='gui-layout'>
+      <Row gap={3}>
+        <Col id='left-column'>
+          <Stack gap={3}>
+            <DeviceManager>
+            </DeviceManager>
+
+          </Stack>
+        </Col>
+        </Row>
+        <Row>
+        <Col id='right-column'>
+
         <Calibration>
-        </Calibration> 
-      </div>
-      <div id='right-column'>
-        <ThreeDRender></ThreeDRender>
-      </div>
-    </div>
+            </Calibration>
+          <Stack>
+            <ThreeDRender></ThreeDRender>
+          </Stack>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 export default GuiLayout;

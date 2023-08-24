@@ -1,10 +1,10 @@
+import { Container } from "react-bootstrap";
 
-const ThreeDRender = function () {
+export default function ThreeDRender () {
   return (
-    <div id='threed-render'>
+    <Container>
       This is the 3D render space
-    </div>
+    </Container>
   )
 
-}
-export default ThreeDRender;
+};

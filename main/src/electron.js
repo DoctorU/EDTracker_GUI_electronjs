@@ -27,7 +27,7 @@ const createWindow = () => {
     win.webContents.openDevTools({ mode: 'detach' });
   }
 };
-
+/* AKA Main.js in all the demos I've been reading! */
 app.whenReady().then(() => {
   createWindow();
 
@@ -43,17 +43,16 @@ app.whenReady().then(() => {
     if (process.platform !== 'darwin') app.quit();
   });
   async function getDevices() {
-    console.log('received IPC!');
-    console.log('devices:');
-    console.log(JSON.stringify(devices, undefined, 2));
     devices =  HID.devices();
+    console.debug('Devices:', devices.length);
     return devices;
   }
-  ipcMain.handle(channels.DEVICES, getDevices)
 
-  // ipcMain.handle(channels.DEVICES, async (event) => {
-  //   console.log(channels.DEVICES, event);
-  //   console.log('Returning "undefined"...');
-  //   event.sender.send(channels.DEVICES, undefined);
-  // });
+  ipcMain.handle(channels.DEVICES, async (event) => {
+    console.debug(Date.now(), channels.DEVICES);
+    //wait for 1s, just to test!
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    const devices = await getDevices();
+    return devices;
+  });
 });

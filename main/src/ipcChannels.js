@@ -1,5 +1,5 @@
 function channelName(ref) {
-  return 'edtracker_' + ref;
+  return 'edtracker:' + ref;
 }
 module.exports = {
   DEVICES : channelName('devices'),
